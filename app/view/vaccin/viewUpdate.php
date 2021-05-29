@@ -14,9 +14,15 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='centreCreated'>        
-        <label for="id">Label : </label><input type="text" id='label' name='label' size='75' value='TCHELONG'><br/>                           
-        <label for="adresse">Adresse : </label><input type="text" id="adresse" name="adresse" size='75' value='Résidence CROUS'><br/>
+        <input type="hidden" name='action' value='vaccinUpdated'>        
+        <label for="id">Selectionnez un vaccin : </label><br/>
+        <select name="id" id="id" ><?php foreach ($liste_vaccin as $vaccin) {
+                    $option_value = $vaccin->getId()." : ".$vaccin->getLabel();
+                    echo("<option> $option_value </option>");
+                      }
+                ?>
+        </select><br/>                          
+        <label for="doses">Doses : </label><br/><input type="number" step='any' name='doses' value='10'>                
       </div>
       <p/>
       <button class="btn btn-primary" type="submit">Go</button>

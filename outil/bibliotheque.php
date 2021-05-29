@@ -164,4 +164,23 @@ function panel($titre,$body,$bt_class="panel-primary"){
             </div>";
 }
 
+function addDropdownMenuItem($label="",$itemList=array(array("action"=>"","label"=>""))){
+    /**
+     * $itemList = array(
+     *                      array("action"=>"","label"=>""),
+     *                      array("action"=>"","label"=>""),
+     *                      ...
+     *              )
+     */
+    echo "<li class=\"dropdown\">
+        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" 
+           aria-haspopup=\"true\" aria-expanded=\"false\">$label <span class=\"caret\"></span></a>
+        <ul class=\"dropdown-menu\">";
+    foreach ( $itemList as $item) {
+    echo "<li><a href=\"router.php?action=".$item["action"]."\">".$item["label"]."</a></li>";
+
+    }
+    echo "</ul>";
+    echo "</li>";
+}
     

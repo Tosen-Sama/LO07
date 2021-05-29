@@ -1,19 +1,19 @@
 
 <!-- ----- début viewId -->
 <?php 
-require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 ?>
 
 <body>
   <div class="container">
       <?php
-      include $root . '/app/view/fragment/fragmentCaveMenu.html';
-      include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
+      include $root . '/app/view/fragment/fragmentCaveMenu.php';
+      include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
 
       // $results contient un tableau avec la liste des clés.
       ?>
 
-    <form role="form" method='get' action='router2.php'>
+    <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='<?php echo($target); ?>'>
         <label for="id">id : </label> <select class="form-control" id='id' name='id' style="width: 100px">
@@ -30,6 +30,6 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     <p/>
   </div>
 
-  <?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
+  <?php include $root . '/app/view/fragment/fragmentCaveFooter.php'; ?>
 
   <!-- ----- fin viewId -->

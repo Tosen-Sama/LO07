@@ -2,7 +2,7 @@
 <!-- ----- début fragmentCaveHeader -->
 <html>
   <head>
-    <title>La cave de l'Utt</title>
+    <title>Ministère de la Santé</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../public/css/bootstrap.css" rel="stylesheet"/>

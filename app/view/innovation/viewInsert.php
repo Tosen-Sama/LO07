@@ -2,17 +2,17 @@
 <!-- ----- début viewInsert -->
  
 <?php 
-require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 ?>
 
 <body>
   <div class="container">
     <?php
-      include $root . '/app/view/fragment/fragmentCaveMenu.html';
-      include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
+      include $root . '/app/view/fragment/fragmentCaveMenu.php';
+      include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?> 
 
-    <form role="form" method='get' action='router2.php'>
+    <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='vinCreated'>        
         <label for="id">cru : </label><input type="text" name='cru' size='75' value='Champagne de déconfinement'>                           
@@ -24,7 +24,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     </form>
     <p/>
   </div>
-  <?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
+  <?php include $root . '/app/view/fragment/fragmentCaveFooter.php'; ?>
 
 <!-- ----- fin viewInsert -->
 

@@ -1,10 +1,10 @@
 
 <!-- ----- debut Router1 -->
 <?php
-require ('../controller/ControllerVin.php');
-require ('../controller/ControllerProducteur.php');
+require ('../controller/ControllerVaccin.php');
+require ('../controller/ControllerCentre.php');
 require ('../controller/ControllerCave.php');
-require ('../controller/ControllerRecolte.php');
+
 
 
 
@@ -23,13 +23,23 @@ $args = $param ;
 
 // --- Liste des méthodes autorisées
 switch ($action) {
- case "vinReadAll" :
- case "vinReadOne" :
- case "vinReadId" :
- case "vinCreate" :
- case "vinCreated" :
- case "vinDeleted" :
-  ControllerVin::$action($args);
+ case "vaccinReadAll" :
+ case "vaccinReadOne" :
+ case "vaccinReadId" :
+ case "vaccinCreate" :
+ case "vaccinCreated" :
+ case "vaccinUpdate" :
+ case "vaccinUpdated" :     
+  ControllerVaccin::$action($args);
+  break;
+
+
+ case "centreReadAll" :
+ case "centreReadOne" :
+ case "centreReadId" :
+ case "centreCreate" :
+ case "centreCreated" :    
+  ControllerCentre::$action($args);
   break;
 
  case "producteurReadAll" :
