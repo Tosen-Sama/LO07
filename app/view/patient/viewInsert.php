@@ -14,10 +14,10 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='vinCreated'>        
-        <label for="id">cru : </label><input type="text" name='cru' size='75' value='Champagne de déconfinement'>                           
-        <label for="id">annee : </label><input type="number" name='annee' value='2021'>
-        <label for="id">degre : </label><input type="number" step='any' name='degre' value='17.24'>                
+        <input type="hidden" name='action' value='patientCreated'>        
+        <label for="nom">Nom : </label><input type="text" name='nom' size='75' value='tosen'><br/>                           
+        <label for="prenom">Prenom : </label><input type="text" name='prenom' size='75' value='sama'><br/>
+        <label for="adresse">Adresse : </label><input type="text" name='adresse' size='75' value='Soul Society'>  <br/>              
       </div>
       <p/>
       <button class="btn btn-primary" type="submit">Go</button>

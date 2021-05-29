@@ -12,17 +12,17 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
     ?>
     <!-- ===================================================== -->
     <?php
-    if ($results) {
-     echo ("<h3>Le nouveau vin a été ajouté </h3>");
+    if ($results >= 0) {
+     echo ("<h3>Le nouveau patient a été ajouté </h3>");
      echo("<ul>");
      echo ("<li>id = " . $results . "</li>");
-     echo ("<li>cru = " . $_GET['cru'] . "</li>");
-     echo ("<li>annee = " . $_GET['annee'] . "</li>");
-     echo ("<li>degre = " . $_GET['degre'] . "</li>");
+     echo ("<li>Nom = " . $_GET['nom'] . "</li>");
+     echo ("<li>Prenom = " . $_GET['prenom'] . "</li>");
+     echo ("<li>Adresse = " . $_GET['adresse'] . "</li>");
      echo("</ul>");
     } else {
-     echo ("<h3>Problème d'insertion du Vin</h3>");
-     echo ("id = " . $_GET['cru']);
+     echo ("<h3>Problème d'insertion du Patient</h3>");
+     echo ("Nom = " . $_GET['nom']." - Prenom = ".$_GET["prenom"]." - Adresse = ".$GET["adresse"]);
     }
 
     echo("</div>");

@@ -3,6 +3,7 @@
 <?php
 require ('../controller/ControllerVaccin.php');
 require ('../controller/ControllerCentre.php');
+require ('../controller/ControllerPatient.php');
 require ('../controller/ControllerCave.php');
 
 
@@ -40,6 +41,14 @@ switch ($action) {
  case "centreCreate" :
  case "centreCreated" :    
   ControllerCentre::$action($args);
+  break;
+
+ case "patientReadAll" :
+ case "patientReadOne" :
+ case "patientReadId" :
+ case "patientCreate" :
+ case "patientCreated" :    
+  ControllerPatient::$action($args);
   break;
 
  case "producteurReadAll" :

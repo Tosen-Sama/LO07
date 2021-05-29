@@ -18,6 +18,11 @@
           array("action"=>"centreCreate","label"=>"Ajout d'un centre"),
           array("action"=>"centreReadAll","label"=>"Liste des centres")
       ));
+      
+      addDropdownMenuItem("Gestion des patients",array(
+          array("action"=>"patientCreate","label"=>"Ajout d'un patient"),
+          array("action"=>"patientReadAll","label"=>"Liste des patients")
+      ));
    
       ?>
      
