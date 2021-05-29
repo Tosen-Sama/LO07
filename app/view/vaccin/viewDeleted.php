@@ -1,0 +1,35 @@
+
+<!-- ----- début viewInserted -->
+<?php
+require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+?>
+
+<body>
+  <div class="container">
+    <?php
+    include $root . '/app/view/fragment/fragmentCaveMenu.html';
+    include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
+    ?>
+    <!-- ===================================================== -->
+    <?php
+    if ($results > 0) {
+     echo ("<h3>Le producteur suivant a été supprimé </h3>");
+     echo("<ul>");
+     echo ("<li> id = " . $last_view->getId() . "</li>");
+     echo ("<li> nom = " . $last_view->getNom() . "</li>");
+     echo ("<li> prenom = " . $last_view->getPrenom() . "</li>");
+     echo ("<li> region = " . $last_view->getRegion() . "</li>");
+     echo("</ul>");
+    } else {
+     echo ("<h3>Erreur de suppression du Producteur suivant. Il est probable qu'il soit présent dans la table récolte</h3>");
+     echo ("<ul><li><h4>id = " . $_GET['id']."</h4></li></ul>");
+    }
+
+    echo("</div>");
+    
+    include $root . '/app/view/fragment/fragmentCaveFooter.html';
+    ?>
+    <!-- ----- fin viewInserted -->    
+
+    
+    
