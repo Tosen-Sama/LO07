@@ -4,6 +4,7 @@
 require ('../controller/ControllerVaccin.php');
 require ('../controller/ControllerCentre.php');
 require ('../controller/ControllerPatient.php');
+require ('../controller/ControllerStock.php');
 require ('../controller/ControllerCave.php');
 
 
@@ -51,6 +52,20 @@ switch ($action) {
   ControllerPatient::$action($args);
   break;
 
+ case "stockReadAll" :
+ case "stockReadAllByVaccin" :
+ case "stockReadAllGlobal" :
+ case "stockReadOne" :
+ case "stockReadId" :
+ case "stockCreateUpdate" :
+ case "stockCreatedUpdated" :
+ case "stockDosesAdd" :
+ case "stockDosesAddInsert" :
+ case "stockDosesAdded" :     
+ case "stockDeleted" :
+  ControllerStock::$action($args);
+  break;
+
  case "producteurReadAll" :
  case "producteurReadOne" :
  case "producteurReadId" :
@@ -66,14 +81,7 @@ case "mesPropositions" :
   ControllerCave::$action();
   break;
 
-case "recolteReadAll" :
- case "recolteReadOne" :
- case "recolteReadId" :
- case "recolteCreateUpdate" :
- case "recolteCreatedUpdated" :
- case "recolteDeleted" :
-  ControllerRecolte::$action($args);
-  break;
+
 
  // Tache par défaut
  default:

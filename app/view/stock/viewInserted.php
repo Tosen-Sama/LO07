@@ -12,18 +12,25 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
     ?>
     <!-- ===================================================== -->
     <?php
-    if ($results) {
-     echo ("<h3>Le nouveau vin a été ajouté </h3>");
-     echo("<ul>");
-     echo ("<li>id = " . $results . "</li>");
-     echo ("<li>cru = " . $_GET['cru'] . "</li>");
-     echo ("<li>annee = " . $_GET['annee'] . "</li>");
-     echo ("<li>degre = " . $_GET['degre'] . "</li>");
-     echo("</ul>");
+    if ($results > 0) {
+        if(!$existence){
+            echo ("<h3>Le nouvelle stock a été ajouté </h3>");
+        }else{
+            echo ("<h3>Le stock a été mise à jour </h3>");
+        }
     } else {
-     echo ("<h3>Problème d'insertion du Vin</h3>");
-     echo ("id = " . $_GET['cru']);
+        if(!$existence){
+          echo ("<h3>Problème d'insertion d'un stock</h3>");
+         }else{
+          echo ("<h3>Problème de modification d'un stock</h3>");
+        }
     }
+    
+    echo("<ul>");
+    echo ("<li>vaccin_id = " . $vaccin_id . "</li>");
+    echo ("<li>centre_id = " . $centre_id . "</li>");
+    echo ("<li>quantite = " . htmlspecialchars($_GET['quantite']) . "</li>");
+    echo("</ul>");
 
     echo("</div>");
     

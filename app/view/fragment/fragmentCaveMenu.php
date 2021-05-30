@@ -23,6 +23,13 @@
           array("action"=>"patientCreate","label"=>"Ajout d'un patient"),
           array("action"=>"patientReadAll","label"=>"Liste des patients")
       ));
+      
+      addDropdownMenuItem("Gestion des stocks",array(
+          array("action"=>"stockReadAllByVaccin","label"=>"Liste des centres avec le nombre de dose de chaque vaccin"),
+          array("action"=>"stockReadAllGlobal","label"=>"Nombre global de doses des centres"),
+          array("action"=>"stockDosesAdd","label"=>"Attribution d'un vaccin pour un centre")
+       
+      ));
    
       ?>
      

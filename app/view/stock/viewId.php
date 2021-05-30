@@ -16,16 +16,16 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='<?php echo($target); ?>'>
-        <label for="id">id : </label> <select class="form-control" id='id' name='id' style="width: 100px">
-            <?php
-            foreach ($results as $id) {
-             echo ("<option>$id</option>");
-            }
-            ?>
-        </select>
+        <label for="centre_id">Selectionnez un centre : </label><br/>
+        <select name="centre_id" id="centre_id" ><?php foreach ($liste_centre as $centre) {
+                    $option_value = $centre[0]." : ".$centre[1]." : ".$centre[2];
+                    echo("<option> $option_value </option>");
+                      }
+                ?>
+        </select><br/>                          
       </div>
       <p/>
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Go</button>
     </form>
     <p/>
   </div>
