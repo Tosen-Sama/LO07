@@ -3,8 +3,8 @@
 <p/>
 <hr/>
 <ul>
-  <li>TD MVC 2020 - 2021 
-  <li>UTT, Jeff TCHELONG - RT04 SSC</li>
+  <li>Projet Printemps 2020 - 2021 
+  <li>UTT, Yann Kevin PORNA & Jeff TCHELONG </li>
 </ul>
 <hr/>
 

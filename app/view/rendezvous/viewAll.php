@@ -14,19 +14,22 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 
     <table class = "table table-striped table-bordered">
       <thead>
-        <tr>
-          <th scope = "col">id</th>
-          <th scope = "col">cru</th>
-          <th scope = "col">année</th>
-          <th scope = "col">degré</th>
-        </tr>
+        <?php 
+              $columns = $results[0] ;
+              echo table_line($columns,array(),array(), true);
+              $datas = $results[1];  
+        ?>
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
-          foreach ($results as $element) {
-           printf("<tr><td>%d</td><td>%s</td><td>%d</td><td>%.2f</td></tr>", $element->getId(), 
-             $element->getCru(), $element->getAnnee(), $element->getDegre());
+          // La liste des Vaccins est dans une variable $results             
+          foreach ($datas as $element) {
+              /*echo("<tr>");
+              for($i=0;$i<count($element);$i++){
+                echo("<td>".$element[$i]."</td>");
+              }
+              echo("</tr>");*/
+           echo table_line($element);
           }
           ?>
       </tbody>

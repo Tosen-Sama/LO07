@@ -94,7 +94,7 @@ class ModelStock {
  }
  
  public static function getAllGlobal() {
-    $query = "SELECT centre.label as Centre, SUM(stock.quantite) as Doses FROM centre,stock WHERE stock.centre_id = centre.id  GROUP BY Centre ORDER BY Doses DESC;";
+    $query = "SELECT centre.label as Centre, SUM(stock.quantite) as Doses FROM centre,stock WHERE stock.centre_id = centre.id GROUP BY Centre  ORDER BY Doses DESC;";
     return ModelStock::getMany($query);
   
  }
@@ -150,14 +150,14 @@ class ModelStock {
   }
  }
 
- public static function update($vaccin_id,$prod_id,$quantite) {
+ public static function update($vaccin_id,$centre_id,$quantite) {
   try {
    $database = Model::getInstance();
    // Suppression d'un tuple
-   $query = "UPDATE stock SET quantite = :qtt WHERE vaccin_id = :vaccin_id AND centre_id = :prod_id";
+   $query = "UPDATE stock SET quantite = :qtt WHERE vaccin_id = :vaccin_id AND centre_id = :centre_id";
    $statement = $database->prepare($query);
    $statement->execute([
-     'vaccin_id' => $vaccin_id , 'prod_id' => $prod_id , 'qtt' => $quantite
+     'vaccin_id' => $vaccin_id , 'centre_id' => $centre_id , 'qtt' => $quantite
    ]);
    return $statement->rowCount();
   } catch (PDOException $e) {

@@ -5,6 +5,7 @@ require ('../controller/ControllerVaccin.php');
 require ('../controller/ControllerCentre.php');
 require ('../controller/ControllerPatient.php');
 require ('../controller/ControllerStock.php');
+require ('../controller/ControllerRendezvous.php');
 require ('../controller/ControllerCave.php');
 
 
@@ -66,15 +67,16 @@ switch ($action) {
   ControllerStock::$action($args);
   break;
 
- case "producteurReadAll" :
- case "producteurReadOne" :
- case "producteurReadId" :
- case "producteurRegionReadAll" :
- case "producteurCountByRegion" :
- case "producteurCreate" :
- case "producteurCreated" :
- case "producteurDeleted" :
-  ControllerProducteur::$action($args);
+ case "rendezvousReadAll" :
+ case "rendezvousReadOne" :
+ case "rendezvousReadId" :
+ case "rendezvousRegionReadAll" :
+ case "rendezvousCountByRegion" :
+ case "rendezvousCreate" :
+ case "rendezvousCreated" :
+ case "rendezvousProcess" :
+ case "rendezvousMakeVaccination" :
+  ControllerRendezvous::$action($args);
   break;
 
 case "mesPropositions" :
