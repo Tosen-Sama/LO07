@@ -80,7 +80,7 @@ class ControllerVaccin {
  public static function vaccinUpdated() {
   // ajouter une validation des informations du formulaire
   $id = intval(explode(" : ",htmlspecialchars($_GET['id']))[0] );
-  $last_view = ModelVaccin::getOne(htmlspecialchars($id))[0];
+  $last_view = ModelVaccin::getOne(htmlspecialchars($id));
   $results = ModelVaccin::update(
       htmlspecialchars($id),htmlspecialchars($_GET['doses']));
   // ----- Construction chemin de la vue
