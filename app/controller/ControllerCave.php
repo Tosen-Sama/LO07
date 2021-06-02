@@ -1,7 +1,7 @@
 
 <!-- ----- debut ControllerCave -->
 <?php
-//require_once '../model/ModelCave.php';
+//require_once '../model/ModelCave.php'; 
 
 class ControllerCave {
  // --- page d'acceuil
