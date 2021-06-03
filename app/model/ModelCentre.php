@@ -125,15 +125,16 @@ class ModelCentre {
   }
  }
 
- public static function update($id,$adresse) {
+ public static function update($id,$label="",$adresse="") {
   try {
    $database = Model::getInstance();
    // Mise à jour d'un tuple;
-   $query = "UPDATE centre SET adresse = :adresse WHERE id = :id ";
+   $query = "UPDATE centre SET label = :label,adresse = :adresse WHERE id = :id ";
    $statement = $database->prepare($query);
    $statement->execute([
      'id' => $id,
-     'adresse' => $adresse,
+     'label' => $label,
+     'adresse' => $adresse
    ]);
    return $id;
   } catch (PDOException $e) {

@@ -50,6 +50,16 @@ class ControllerCentre {
  public static function centreCreate() {
   // ----- Construction chemin de la vue
   include 'config.php';
+  $target = "centreCreated";
+  $vue = $root . '/app/view/centre/viewInsert.php';
+  require ($vue);
+ }
+ 
+ public static function centreSetInfos() {
+  // ----- Construction chemin de la vue
+  include 'config.php';
+  $id = intval(explode(" : ",htmlspecialchars($_GET['id']))[0] );
+  $target = "centreUpdated";
   $vue = $root . '/app/view/centre/viewInsert.php';
   require ($vue);
  }
@@ -73,7 +83,7 @@ class ControllerCentre {
   $liste_centre = ModelCentre::getAll();
 
   include 'config.php';
-  $vue = $root . '/app/view/centre/viewUpdate.php';
+  $vue = $root . '/app/view/innovation/viewCentreUpdate.php';
   require ($vue);
  }
  
@@ -82,10 +92,10 @@ class ControllerCentre {
   $id = intval(explode(" : ",htmlspecialchars($_GET['id']))[0] );
   $last_view = ModelCentre::getOne(htmlspecialchars($id))[0];
   $results = ModelCentre::update(
-      htmlspecialchars($id),htmlspecialchars($_GET['adresse']));
+      htmlspecialchars($id),htmlspecialchars($_GET['label']),htmlspecialchars($_GET['adresse']));
   // ----- Construction chemin de la vue
   include 'config.php';
-  $vue = $root . '/app/view/centre/viewUpdated.php';
+  $vue = $root . '/app/view/innovation/viewCentreUpdated.php';
   require ($vue);
  }
  

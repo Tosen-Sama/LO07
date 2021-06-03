@@ -14,10 +14,10 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='patientSetInfos'>        
-        <label for="id">Selectionnez un patient : </label><br/>
-        <select name="id" id="id" ><?php foreach ($liste_patient as $patient) {
-                    $option_value = $patient->getId()." : ".$patient->getNom()." : ".$patient->getPrenom()." : ".$patient->getAdresse();
+        <input type="hidden" name='action' value='centreSetInfos'>        
+        <label for="id">Selectionnez un centre : </label><br/>
+        <select name="id" id="id" ><?php foreach ($liste_centre as $centre) {
+                    $option_value = $centre->getId()." : ".$centre->getLabel()." : ".$centre->getAdresse();
                     echo("<option> $option_value </option>");
                       }
                 ?>

@@ -135,15 +135,17 @@ class ModelPatient {
   }
  }
 
- public static function update($id,$adresse) {
+ public static function update($id,$nom="",$prenom="",$adresse="") {
   try {
    $database = Model::getInstance();
    // Mise à jour d'un tuple;
-   $query = "UPDATE patient SET adresse = :adresse WHERE id = :id ";
+   $query = "UPDATE patient SET nom = :nom, prenom = :prenom, adresse = :adresse WHERE id = :id ";
    $statement = $database->prepare($query);
    $statement->execute([
      'id' => $id,
-     'adresse' => $adresse,
+     'nom' => $nom,
+     'prenom' => $prenom,
+     'adresse' => $adresse
    ]);
    return $id;
   } catch (PDOException $e) {

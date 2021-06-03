@@ -50,6 +50,16 @@ class ControllerPatient {
  public static function patientCreate() {
   // ----- Construction chemin de la vue
   include 'config.php';
+  $target = "patientCreated";
+  $vue = $root . '/app/view/patient/viewInsert.php';
+  require ($vue);
+ }
+ 
+ public static function patientSetInfos() {
+  // ----- Construction chemin de la vue
+  include 'config.php';
+  $id = intval(explode(" : ",htmlspecialchars($_GET['id']))[0] );
+  $target = "patientUpdated";
   $vue = $root . '/app/view/patient/viewInsert.php';
   require ($vue);
  }
@@ -73,7 +83,7 @@ class ControllerPatient {
   $liste_patient = ModelPatient::getAll();
 
   include 'config.php';
-  $vue = $root . '/app/view/patient/viewUpdate.php';
+  $vue = $root . '/app/view/innovation/viewPatientUpdate.php';
   require ($vue);
  }
  
@@ -82,10 +92,10 @@ class ControllerPatient {
   $id = intval(explode(" : ",htmlspecialchars($_GET['id']))[0] );
   $last_view = ModelPatient::getOne(htmlspecialchars($id))[0];
   $results = ModelPatient::update(
-      htmlspecialchars($id),htmlspecialchars($_GET['adresse']));
+      htmlspecialchars($id),htmlspecialchars($_GET['nom']),htmlspecialchars($_GET['prenom']),htmlspecialchars($_GET['adresse']));
   // ----- Construction chemin de la vue
   include 'config.php';
-  $vue = $root . '/app/view/patient/viewUpdated.php';
+  $vue = $root . '/app/view/innovation/viewPatientUpdated.php';
   require ($vue);
  }
  

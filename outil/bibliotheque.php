@@ -164,11 +164,11 @@ function panel($titre,$body,$bt_class="panel-primary"){
             </div>";
 }
 
-function addDropdownMenuItem($label="",$itemList=array(array("action"=>"","label"=>""))){
+function addDropdownMenuItem($label="",$itemList=array(array("action"=>"","target"=>"","label"=>""))){
     /**
      * $itemList = array(
-     *                      array("action"=>"","label"=>""),
-     *                      array("action"=>"","label"=>""),
+     *                      array("action"=>"","target"=>"","label"=>""),
+     *                      array("action"=>"","target"=>"","label"=>""),
      *                      ...
      *              )
      */
@@ -177,7 +177,17 @@ function addDropdownMenuItem($label="",$itemList=array(array("action"=>"","label
            aria-haspopup=\"true\" aria-expanded=\"false\">$label <span class=\"caret\"></span></a>
         <ul class=\"dropdown-menu\">";
     foreach ( $itemList as $item) {
-    echo "<li><a href=\"router.php?action=".$item["action"]."\">".$item["label"]."</a></li>";
+        if(!isset($item["action"])){
+           $item["action"]="truc"; 
+        }
+        if(!isset($item["label"])){
+           $item["label"]="Label Undefined"; 
+        }
+        if(!isset($item["target"])){
+           $item["target"]=""; 
+        }
+
+    echo "<li><a href=\"router.php?action=".$item["action"]."&target=".$item["target"]."\">".$item["label"]."</a></li>";
 
     }
     echo "</ul>";

@@ -35,8 +35,12 @@
           array("action"=>"rendezvousReadId","label"=>"Dossier de vaccination d'un client")
       ));
       
-      addDropdownMenuItem("Mes innovations",array(
-          array("action"=>" ","label"=>" ")
+      addDropdownMenuItem("Mes innovations",array( 
+          array("action"=>"patientUpdate","target"=>"patientSetInfos","label"=>"Innovation 1 : Mise à jour d'un patient"),
+          array("action"=>"centreUpdate","target"=>"centreSetInfos","label"=>"Innovation 2 : Mise à jour d'un centre"),
+          array("action"=>" ","target"=>"","label"=>"Innovation 3 : A Venir")
+          
+
       ));
       
       addDropdownMenuItem("Documentation",array(

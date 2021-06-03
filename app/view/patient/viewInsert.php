@@ -14,7 +14,12 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='patientCreated'>        
+        <?php
+         if(isset($id)){
+             echo "<input type='hidden' name='id' value='$id'>" ;
+         }
+        ?>
+        <input type='hidden' name='action' value='<?php echo"$target"; ?>'>        
         <label for="nom">Nom : </label><input type="text" name='nom' size='75' value='tosen'><br/>                           
         <label for="prenom">Prenom : </label><input type="text" name='prenom' size='75' value='sama'><br/>
         <label for="adresse">Adresse : </label><input type="text" name='adresse' size='75' value='Soul Society'>  <br/>              

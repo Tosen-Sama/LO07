@@ -41,7 +41,10 @@ switch ($action) {
  case "centreReadOne" :
  case "centreReadId" :
  case "centreCreate" :
- case "centreCreated" :    
+ case "centreCreated" : 
+ case "centreUpdate" :
+ case "centreUpdated" : 
+ case "centreSetInfos" :
   ControllerCentre::$action($args);
   break;
 
@@ -49,7 +52,10 @@ switch ($action) {
  case "patientReadOne" :
  case "patientReadId" :
  case "patientCreate" :
- case "patientCreated" :    
+ case "patientCreated" : 
+ case "patientUpdate" :
+ case "patientUpdated" : 
+ case "patientSetInfos" : 
   ControllerPatient::$action($args);
   break;
 
