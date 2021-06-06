@@ -8,4 +8,7 @@
 </ul>
 <hr/>
 
+</body>
+</html>
+
 <!-- ----- fin fragmentCaveFooter.php -->

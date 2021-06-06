@@ -14,6 +14,8 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?> 
 
+          <h4> <strong> Ces quantités seront ajoutées aux quantités présentes en stock : </strong> </h4>
+
     <form role="form" method='get' action=''>
       <div class="form-group">
         <input type="hidden" name='action' value='stockDosesAdded'>

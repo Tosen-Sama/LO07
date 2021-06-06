@@ -134,7 +134,6 @@ class ModelStock {
   try {
    $database = Model::getInstance();
 
-   
    // ajout d'un nouveau tuple;
    $query = "insert into stock value ( :prod_id,:vaccin_id, :qtt)";
    $statement = $database->prepare($query);

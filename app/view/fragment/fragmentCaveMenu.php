@@ -38,13 +38,17 @@
       addDropdownMenuItem("Mes innovations",array( 
           array("action"=>"patientUpdate","target"=>"patientSetInfos","label"=>"Innovation 1 : Mise à jour d'un patient"),
           array("action"=>"centreUpdate","target"=>"centreSetInfos","label"=>"Innovation 2 : Mise à jour d'un centre"),
-          array("action"=>" ","target"=>"","label"=>"Innovation 3 : A Venir")
+          array("action"=>"stockCreateUpdate","target"=>"","label"=>"Innovation 3 : Correction d'un stock")
           
 
       ));
       
-      addDropdownMenuItem("Documentation",array(
-          array("action"=>" ","label"=>" ")
+      addDropdownMenuItem("Documentation",array( 
+          array("action"=>"innovation1","target"=>"","label"=>"Documentation innovation 1"),
+          array("action"=>"innovation2","target"=>"","label"=>"Documentation innovation 2"),
+          array("action"=>"innovation3","target"=>"","label"=>"Documentation innovation 3"),
+          array("action"=>"mesPropositions","target"=>"","label"=>"Point de vue global sur ce projet")
+
       ));
    
       ?>

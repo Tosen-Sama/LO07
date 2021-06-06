@@ -70,6 +70,7 @@ switch ($action) {
  case "stockDosesAddInsert" :
  case "stockDosesAdded" :     
  case "stockDeleted" :
+ case "stockCorrect" :
   ControllerStock::$action($args);
   break;
 
@@ -85,7 +86,11 @@ switch ($action) {
   ControllerRendezvous::$action($args);
   break;
 
-case "mesPropositions" :
+ case "mesPropositions" :
+ case "innovation1" :
+ case "innovation2" :
+ case "innovation3" :
+
   ControllerCave::$action();
   break;
 

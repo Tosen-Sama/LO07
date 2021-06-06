@@ -20,7 +20,30 @@ class ControllerCave {
    echo ("ControllerCave : mesPropositions : vue = $vue");
   require ($vue);
  }
+ 
+ public static function innovation1() {
+     include 'config.php';
+  $vue = $root . '/public/documentation/innovation1.php';
+  //if (DEBUG)
+   echo ("Documentation : Innovation : vue = $vue");
+  require ($vue);
+ }
 
+  public static function innovation2() {
+     include 'config.php';
+  $vue = $root . '/public/documentation/innovation2.php';
+  //if (DEBUG)
+   echo ("Documentation : Innovation : vue = $vue");
+  require ($vue);
+ }
+ 
+  public static function innovation3() {
+     include 'config.php';
+  $vue = $root . '/public/documentation/innovation3.php';
+  //if (DEBUG)
+   echo ("Documentation : Innovation : vue = $vue");
+  require ($vue);
+ }
  
 }
 ?>
