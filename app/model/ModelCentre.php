@@ -69,7 +69,7 @@ class ModelCentre {
   }
  }
 
- public static function getAll() {
+ public static function getAll() { 
   try {
    $database = Model::getInstance();
    $query = "select * from centre";

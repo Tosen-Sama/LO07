@@ -5,11 +5,18 @@
 require ($root . '/app/view/fragment/fragmentCaveHeader.php');
 ?>
 
+
 <body>
   <div class="container">
       <?php
       include $root . '/app/view/fragment/fragmentCaveMenu.php';
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
+      ?>
+      
+      <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
       ?>
 
     <table class = "table table-striped table-bordered">

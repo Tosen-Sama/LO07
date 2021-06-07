@@ -12,6 +12,12 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
       ?>
 
+      <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
+      ?>
+      
     <table class = "table table-striped table-bordered">
       <thead>
         <?php 

@@ -11,6 +11,12 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       include $root . '/app/view/fragment/fragmentCaveMenu.php';
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
       ?>
+      
+      <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
+      ?>
 
     <table class = "table table-striped table-bordered">
       <thead>
@@ -22,11 +28,11 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       </thead>
       <tbody>
           <?php
-          // La liste des producteurs est dans une variable $results             
+          // La liste des vins est dans une variable $results             
           foreach ($results as $element) {
            printf("<tr><td>%d</td><td>%s</td><td>%s</td></tr>", $element->getId(), 
              $element->getLabel(), $element->getAdresse());
-          } 
+          }
           ?>
       </tbody>
     </table>

@@ -19,6 +19,8 @@ class ControllerVaccin {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/vaccin/viewAll.php';
+  $view_banner = "Liste de tous les vaccins contre la Covid " ;
+
   if (DEBUG)
    echo ("ControllerVaccin : vaccinReadAll : vue = $vue");
   require ($vue);
@@ -51,6 +53,8 @@ class ControllerVaccin {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/vaccin/viewInsert.php';
+  $view_banner = "Ajout d'un nouveau vaccin à la liste des vaccins contre la Covid" ;
+
   require ($vue);
  }
 
@@ -73,6 +77,7 @@ class ControllerVaccin {
   $liste_vaccin = ModelVaccin::getAll();
 
   include 'config.php';
+  $view_banner = "Mise à jour des informations sur un vaccin (Nom / Nombre de doses nécessaires)" ;
   $vue = $root . '/app/view/vaccin/viewUpdate.php';
   require ($vue);
  }

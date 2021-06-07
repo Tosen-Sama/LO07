@@ -22,6 +22,8 @@ class ControllerStock {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/stock/viewAll.php';
+    $view_banner = "Liste de toutes les quantités de chaque vaccin dans chaque centre" ;
+
   if (DEBUG)
    echo ("ControllerStock : stockReadAll : vue = $vue");
   require ($vue);
@@ -32,6 +34,8 @@ class ControllerStock {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/stock/viewAll.php';
+  $view_banner = "Liste de tous les vaccins et des quantités par centre" ;
+
   if (DEBUG)
    echo ("ControllerStock : stockReadAllByVaccin : vue = $vue");
   require ($vue);
@@ -42,6 +46,8 @@ class ControllerStock {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/stock/viewAll.php';
+  $view_banner = "Nombre de doses total dans chaque centre de vaccination" ;
+
   if (DEBUG)
    echo ("ControllerStock : stockReadAllByVaccin : vue = $vue");
   require ($vue);
@@ -79,6 +85,8 @@ class ControllerStock {
   $liste_centre = ModelCentre::getAll();
   include 'config.php';
   $vue = $root . '/app/view/stock/viewInsert.php';
+  $view_banner = "Correction des informations sur un stock de vaccin dans un centre de vaccination" ;
+
   require ($vue);
  }
  
@@ -88,6 +96,8 @@ class ControllerStock {
   $liste_centre = ModelCentre::getAll();
   include 'config.php';
   $vue = $root . '/app/view/stock/viewDosesAdd.php';
+   $view_banner = "Réapprovisionner un centre en vaccins :" ;
+
   require ($vue);
  }
  
@@ -126,6 +136,8 @@ class ControllerStock {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/stock/viewAll.php';
+  $view_banner = "Liste de tous les vaccins et des quantités par centre" ;
+
   require ($vue);
  }
 

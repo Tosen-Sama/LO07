@@ -23,6 +23,8 @@ class ControllerRendezvous {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/rendezvous/viewAll.php';
+  $view_banner = "Liste de tous les rendez-vous de vaccination" ;
+
   if (DEBUG)
    echo ("ControllerRendezvous : rendezvousReadAll : vue = $vue");
   require ($vue);
@@ -37,6 +39,8 @@ class ControllerRendezvous {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/rendezvous/viewId.php';
+  $view_banner = "Centre de vaccination des patients" ;
+
   require ($vue);
  }
 

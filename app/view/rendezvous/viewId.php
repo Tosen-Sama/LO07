@@ -13,6 +13,11 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       // $results contient un tableau avec la liste des clés.
       ?>
 
+      <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
+      ?>
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='<?php echo($target); ?>'>

@@ -19,6 +19,8 @@ class ControllerCentre {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/centre/viewAll.php';
+  $view_banner = "Liste de tous les centres" ;
+
   if (DEBUG)
    echo ("ControllerCentre : centreReadAll : vue = $vue");
   require ($vue);
@@ -43,6 +45,7 @@ class ControllerCentre {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/centre/viewAll.php';
+  $view_banner = "Affiche d'un centre" ;
   require ($vue);
  }
 
@@ -51,6 +54,8 @@ class ControllerCentre {
   // ----- Construction chemin de la vue
   include 'config.php';
   $target = "centreCreated";
+    $view_banner = "Ajout d'un nouveau centre de vaccination" ;
+
   $vue = $root . '/app/view/centre/viewInsert.php';
   require ($vue);
  }
@@ -83,6 +88,7 @@ class ControllerCentre {
   $liste_centre = ModelCentre::getAll();
 
   include 'config.php';
+  $view_banner = "Mise à jour des informations sur un centre" ;
   $vue = $root . '/app/view/innovation/viewCentreUpdate.php';
   require ($vue);
  }

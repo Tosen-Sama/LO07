@@ -12,6 +12,12 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?> 
 
+     <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
+      ?>
+      
     <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='rendezvousCreatedUpdated'>        

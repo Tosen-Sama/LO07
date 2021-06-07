@@ -19,6 +19,8 @@ class ControllerPatient {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/patient/viewAll.php';
+  $view_banner = "Liste de tous les patients" ;
+
   if (DEBUG)
    echo ("ControllerPatient : patientReadAll : vue = $vue");
   require ($vue);
@@ -43,6 +45,8 @@ class ControllerPatient {
   // ----- Construction chemin de la vue
   include 'config.php';
   $vue = $root . '/app/view/patient/viewAll.php';
+  $view_banner = "Informations sur le patient" ;
+
   require ($vue);
  }
 
@@ -51,6 +55,7 @@ class ControllerPatient {
   // ----- Construction chemin de la vue
   include 'config.php';
   $target = "patientCreated";
+   $view_banner = "Inscription d'un nouveau patient" ;
   $vue = $root . '/app/view/patient/viewInsert.php';
   require ($vue);
  }
@@ -83,6 +88,7 @@ class ControllerPatient {
   $liste_patient = ModelPatient::getAll();
 
   include 'config.php';
+  $view_banner = "Mise à jour des informations sur un patient" ;
   $vue = $root . '/app/view/innovation/viewPatientUpdate.php';
   require ($vue);
  }

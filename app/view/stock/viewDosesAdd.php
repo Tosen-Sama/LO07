@@ -12,8 +12,13 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.php');
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?> 
 
-      <h4> <strong> Réapprovisionner un centre en vaccins : </strong> </h4>
-    <form role="form" method='get' action='router.php'>
+      <?php 
+        if(isset($view_banner)){
+            panel_head($view_banner);
+        }
+      ?>    
+      
+      <form role="form" method='get' action='router.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='stockDosesAddInsert'>                                 
         <label for="centre_id">Selectionnez un centre : </label><br/>
