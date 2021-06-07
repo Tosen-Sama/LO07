@@ -16,8 +16,9 @@ require_once ($root . '/outil/bibliotheque.php');
   panel_head("Propositions d'amélioration :");
   panel("Proposition 1 : ", "<h4>Nouvelles fonctionnalités</h4>"
           . "<ul>"
-          . "<li>Ajouter des fonctionnalités pour pour mettre à jour les informations sur dans les modèles.</li>"
-          . "<li>Ajouter des fonctionnalités pour supprimer des informations dans les modèles.</li>"
+          . "<li>Ajouter des fonctionnalités pour pour mettre à jour les informations sur un patient.</li>"
+          . "<li>Ajouter des fonctionnalités pour mettre à jour les informations sur un centre.</li>"
+        . "<li>Ajouter des fonctionnalités pour mettre à jour les informations sur un stock de vaccin.</li>"
           . "</ul>");
   
   panel("Proposition 2 : ", "<h4>Compléter nos modèles</h4>"
