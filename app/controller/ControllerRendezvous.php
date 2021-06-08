@@ -119,11 +119,13 @@ class ControllerRendezvous {
         $vue = $root . '/app/view/rendezvous/viewSelectCentre.php';
         require ($vue);        
     }else{
-        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injections "
+        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injection "
                                           . "FROM vaccin,centre,patient,rendezvous "
                                           . "WHERE rendezvous.patient_id = patient.id AND rendezvous.patient_id = $patient_id AND vaccin.id = rendezvous.vaccin_id AND rendezvous.centre_id = $centre_id AND rendezvous.vaccin_id = $vaccin_id ");
         include 'config.php';
         $target = "truc" ;
+        $view_banner = "Ce patient a reçu toutes les doses necessaires de son vaccin." ;
+
         $vue = $root . '/app/view/rendezvous/viewAll.php';
         require ($vue);
     }
@@ -163,11 +165,12 @@ class ControllerRendezvous {
          //mise à jour du dossier de rendez-vous du client
          $results = ModelRendezvous::insert($centre_id,intval(htmlspecialchars($_GET['patient_id'])),intval(htmlspecialchars($_GET['injection']))+1,$vaccin_id);
          
-        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injections "
+        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injection "
                                           . "FROM vaccin,centre,patient,rendezvous "
                                           . "WHERE rendezvous.patient_id = patient.id AND rendezvous.patient_id = ".intval(htmlspecialchars($_GET['patient_id']))." AND vaccin.id = rendezvous.vaccin_id AND rendezvous.centre_id = $centre_id AND rendezvous.vaccin_id = $vaccin_id ");
          include 'config.php';
          $target = "truc" ;
+         $view_banner = "Ce patient a reçu une nouvelle dose de son vaccin." ;
          $vue = $root . '/app/view/rendezvous/viewAll.php';
          require ($vue);  
       break;
@@ -187,11 +190,13 @@ class ControllerRendezvous {
              $results = ModelRendezvous::insert($centre_id,intval(htmlspecialchars($_GET['patient_id'])),intval(htmlspecialchars($_GET['injection']))+1,$vaccin_id);
          }
          //echo "<br><br><br><br><br><br><br><br>RESULT : $results";
-        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injections "
+        $results = ModelRendezvous::getMany("SELECT DISTINCT patient.nom as Nom, patient.prenom as Prenom, vaccin.label as Vaccin, rendezvous.injection as Injection "
                                           . "FROM vaccin,centre,patient,rendezvous "
                                           . "WHERE rendezvous.patient_id = patient.id AND rendezvous.patient_id = ".intval(htmlspecialchars($_GET['patient_id']))." AND vaccin.id = rendezvous.vaccin_id AND rendezvous.centre_id = $centre_id AND rendezvous.vaccin_id = $vaccin_id ");
          include 'config.php';
          $target = "truc" ;
+         $view_banner = "Ce patient a reçu une nouvelle dose de son vaccin." ;
+
          $vue = $root . '/app/view/rendezvous/viewAll.php';
          require ($vue);
       break;
